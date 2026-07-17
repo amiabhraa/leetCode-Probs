@@ -1,17 +1,29 @@
+----------------My Solution---------------------------
+
 class Solution {
     public int gcdOfOddEvenSums(int n) {
         int numEven = 0;
         int numOdd = 0;
         int target=0;
-        for(int i = 0; i <= n;i++){
-            numEven = numEven + (i+i);
-            numOdd = numOdd + (i+i+1);
-        }
-        for(int j = n; j <= 0; j--){
+        int num = n;
+        //Formula for first n Even numbers
+        numEven = num*(num+1);
+        //Formula for First n Odd numbers
+        numOdd = num*num;
+        for(int j = numEven; j >= 0; j--){
             if(numEven % j == 0 && numOdd % j == 0){
                 target = j;
+                break;
             }
         }
         return target;
+    }
+}
+
+
+--------------------Optimal Solution (Lowest ms)----------------------
+class Solution {
+    public int gcdOfOddEvenSums(int n) {
+        return n;
     }
 }
