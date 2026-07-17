@@ -1,0 +1,17 @@
+class Solution {
+    public int gcdOfOddEvenSums(int n) {
+        int numEven = 0;
+        int numOdd = 0;
+        int target=0;
+        for(int i = 0; i <= n;i++){
+            numEven = numEven + (i+i);
+            numOdd = numOdd + (i+i+1);
+        }
+        for(int j = n; j <= 0; j--){
+            if(numEven % j == 0 && numOdd % j == 0){
+                target = j;
+            }
+        }
+        return target;
+    }
+}
