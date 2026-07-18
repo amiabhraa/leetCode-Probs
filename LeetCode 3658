@@ -5,7 +5,7 @@ class Solution {
         int numEven = 0;
         int numOdd = 0;
         int target=0;
-        int num = n;
+        int num = n; 
         //Formula for first n Even numbers
         numEven = num*(num+1);
         //Formula for First n Odd numbers
