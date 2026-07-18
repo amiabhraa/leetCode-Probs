@@ -1,16 +1,24 @@
+-----------------------------My solution-----------------------------------
+
 class Solution {
     public int findGCD(int[] nums) {
-        int numSmall =nums[0];
+        int numSmall = nums[0];
         int numBig = nums[0];
-        int num =0;
-        for(int i = 0; i< nums.length; i++){
-            if(i > numBig){
-                numBig = i;
+        int target = 0;
+        for(int i = 0; i < nums.length; i++){
+            if(nums[i] > numBig){
+                numBig = nums[i];
             }
-            if(i < numSmall){
-                numSmall = i;
+            if(nums[i] < numSmall){
+                numSmall = nums[i];
             }
         }
-        
+        for(int i = numSmall; i >= 0; i--){
+            if(numSmall % i == 0 && numBig % i ==0){
+                target = i;
+                break;
+            }
+        }
+        return target;
     }
 }
